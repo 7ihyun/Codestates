@@ -34,7 +34,7 @@ public class ElectricityBill {
                 break;
             }
             catch (Exception e) {
-                System.out.println("잘못된 입력입니다.");
+                System.out.println("잘못된 입력입니다!");
                 e.printStackTrace();
                 break;
             }
