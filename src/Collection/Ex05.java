@@ -1,3 +1,5 @@
+package Collection;
+
 import java.util.*;
 public class Ex05 {
     public ArrayList<Integer> addNth(ArrayList<Integer> arrayList, int index, int element) {

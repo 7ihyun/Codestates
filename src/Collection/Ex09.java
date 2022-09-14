@@ -1,3 +1,5 @@
+package Collection;
+
 import java.util.*;
 public class Ex09 {
     public ArrayList<Integer> removeFromBackOfNew(ArrayList<Integer> arrayList) {

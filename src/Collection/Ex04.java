@@ -1,3 +1,5 @@
+package Collection;
+
 import java.util.*;
 public class Ex04 {
     public ArrayList<String> addLast(ArrayList<String> arrayList, String str) {

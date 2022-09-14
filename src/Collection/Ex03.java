@@ -1,3 +1,5 @@
+package Collection;
+
 import java.util.*;
 public class Ex03 {
     public String getLastElement(ArrayList<String> arrayList) {

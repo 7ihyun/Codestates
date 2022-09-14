@@ -1,3 +1,5 @@
+package Collection;
+
 import java.util.*;
 public class Ex18 {
     public int addOddValues(HashMap<Character, Integer> hashMap) {
