@@ -1,4 +1,4 @@
-public class Overloading {
+public class OverloadingTest {
     public static void main(String[] args) {
         Shape s = new Shape(); //객체 생성
 

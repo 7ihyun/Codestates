@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class ExSwitch {
+public class Ex_switch {
     static Scanner myInput = new Scanner(System.in);
     public static void main(String[] args) {
         String dice = myInput.nextLine(); //주사위 번호 입력

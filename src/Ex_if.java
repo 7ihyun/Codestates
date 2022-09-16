@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class ExIf {
+public class Ex_if {
     static Scanner myInput = new Scanner(System.in);
     public static void main(String[] args) {
         String dice = myInput.nextLine(); //주사위 번호 입력값을 받아온다
