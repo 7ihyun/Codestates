@@ -13,19 +13,23 @@ public class Ex24 {
             return null;
         }
 
+        //hashMap 정의
         HashMap<Character, Integer> hashMap = new HashMap<>();
 
-        for (int i = 0; i < str.length(); i++) {
-            char curChar = str.charAt(i);
+        //str 순회
+        // 각 문자가 hashMap에 존재하는지 확인
+        // (문자가 hashMap에 존재하면 +1, 존재하지 않으면 새로은 entry 객체 생성)
 
-            if (hashMap.containsKey(curChar)) {
-                int value = hashMap.get(curChar);
-                hashMap.put(curChar, value + 1);
-            }
-            else {
-                hashMap.put(curChar, 1);
-            }
+        for (int i = 0; i < str.length(); i++) {
+            char character = str.charAt(i);
+
+            if (hashMap.containsKey(character)) {
+                int value = hashMap.get(character);
+                hashMap.put(character, value + 1);
+            } //if (hashMap.containsKey(character)) hashMap.put(character, hashMap.get(character) + 1);
+            else hashMap.put(character, 1);
         }
+
         return hashMap;
     }
 }

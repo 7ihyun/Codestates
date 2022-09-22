@@ -18,3 +18,6 @@ public class Ex22 {
         return member.get(username).equals(password);
     }
 }
+/*
+return member.containsKey(username) ? member.get(username).equals(password) : false;
+ */

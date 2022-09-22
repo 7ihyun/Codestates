@@ -14,11 +14,10 @@ public class Ex23 {
         //입력받은 HashMap에 존재하지 않는 키는 무시
         //HashMap을 수정하지 않아야 함
 
-        for (String el : arr) {
-            if (hashMap.containsKey(el)) {
-                newHashMap.put(el, hashMap.get(el));
-            }
+        for (String str : arr) {
+            if (hashMap.containsKey(str)) newHashMap.put(str, hashMap.get(str));
         }
         return newHashMap;
     }
 }
+

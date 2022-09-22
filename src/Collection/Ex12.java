@@ -11,13 +11,15 @@ public class Ex12 {
         if (arrayList.size() == 0) return 0;
 
         int sum = 0;
+
         Iterator<Integer> iterator = arrayList.iterator(); //Iterator를 이용해 요소를 순회
 
-        while (iterator.hasNext()) {
-            Integer next = iterator.next();
-            sum += next;
-        }
+        while (iterator.hasNext()) sum += iterator.next();
 
         return sum;
     }
 }
+/*
+for문 사용한 풀이
+for (Integer num : arrayList) sum+= num;
+ */
