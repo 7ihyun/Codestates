@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Ex04 {
     public static void main(String[] args) {
-        Integer[] boxes = new Integer[]{5, 1, 4, 6};
+        Integer[] boxes = new Integer[]{1, 3, 4, 2, 1, 6};
         int output = paveBox(boxes);
         System.out.println(output); // 3
 
@@ -21,6 +21,29 @@ public class Ex04 {
         ** 각 요소를 기준으로 count -> boxes 배열의 크기와 동일한 count 배열을 선언
          */
         //ToDo :
+        ArrayList<Integer> result = new ArrayList<>(); //정답을 담을 리스트 선언
+        List<Integer> arrayList = new ArrayList<Integer>(Arrays.asList(boxes)); //box를 순회 -> 리스트로 변경 (array to list)
+
+        //box 를 모두 순회 -> arrayList
+        while (arrayList.size() > 0) { //arrayList 가 비어 있게 될 때까지 순회
+            //자신(앞 사람)과 뒷 사람들을 비교
+            for(int i = 0; i < arrayList.size(); i++) {
+                //자신과 비교했을 때, 자신보다 작은 요소들과 함께 탈출
+                if(arrayList.get(i) > arrayList.get(0)) {
+                    result.add(i);
+                    arrayList = arrayList.subList(i , arrayList.size()); //나간 요소들 제거
+                    break; //더 큰 요소를 찾은 경우 탈출
+                }
+
+                //모든 요소가 나갈 수 있는 경우 (자신보다 큰 요소를 찾을 수 없는 경우)
+                if(i == arrayList.size() - 1) {
+                    result.add(arrayList.size());
+                    arrayList.clear();
+                }
+            }
+        }
+        return result.stream().max(Integer::compare).orElse(-1);
+
 //        Queue<Integer> q = new LinkedList<>();
 //
 //        int[] count = new int[boxes.length]; //count의 값을 비교하여 최댓값을 리턴 -> count를 배열로 저장
@@ -54,24 +77,5 @@ public class Ex04 {
 //            if (max < count[i]) max = count[i];
 //        }
 //        return max;
-
-        ArrayList<Integer> result = new ArrayList<>();
-        List<Integer> arrayList = new ArrayList<Integer>(Arrays.asList(boxes));
-
-        while (arrayList.size() > 0) {
-            for(int i = 0; i < arrayList.size(); i++) {
-                if(arrayList.get(i) > arrayList.get(0)) {
-                    result.add(i);
-                    arrayList = arrayList.subList(i , arrayList.size());
-                    break;
-                }
-
-                if(i == arrayList.size() - 1) {
-                    result.add(arrayList.size());
-                    arrayList.clear();
-                }
-            }
-        }
-        return result.stream().max(Integer::compare).orElse(-1);
     }
 }

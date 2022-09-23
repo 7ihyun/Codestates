@@ -6,11 +6,12 @@ public class Ex01 {
     private ArrayList<Integer> listStack = new ArrayList<Integer>();
 
     public void push(Integer data) {
+
         listStack.add(data); //데이터 추가
     }
 
     public Integer pop() {
-        if(listStack.size() == 0) { //빈 list
+        if(listStack.size() == 0) { //빈 list 일 때 null 리턴 (=isEmpty)
             return null;
         }else {
             return listStack.remove(listStack.size()-1); //마지막 데이터 삭제
@@ -18,11 +19,11 @@ public class Ex01 {
     }
 
     public int size() {
-        return listStack.size(); //추가된 데이터의 크기
+        return listStack.size(); //추가된 데이터의 크기를 리턴
     }
 
     public Integer peek() {
-        if(listStack.size() == 0) {
+        if(listStack.size() == 0) { //빈 list 일 때 null 리턴 (=isEmpty)
             return null;
         }else {
             return listStack.get(listStack.size()-1); //마지막 데이터 리턴

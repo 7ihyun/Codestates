@@ -17,40 +17,35 @@ public class Ex03 {
         System.out.println(output2); // [["A", "B"], ["D"], ["E"]]
     }
     public static ArrayList<Stack> browserStack(String[] actions, String start) {
-        Stack<String> prevStack = new Stack<>();
-        Stack<String> nextStack = new Stack<>();
-        Stack<String> current = new Stack<>();
+        Stack<String> prevStack = new Stack<>(); //이전 페이지
+        Stack<String> nextStack = new Stack<>(); //다음 페이지
+        Stack<String> current = new Stack<>(); //현재 페이지
         ArrayList<Stack> result = new ArrayList<>();
 
         //ToDo :
-        current.push(start);
-        //향상된 for문 a:b 로 써보기
-        for (int i = 0; i < actions.length; i++) {
+        //start = 시작 페이지, actions : 명령어
 
-            //뒤로 가기 버튼을 누른 경우 "-1"
-            if (actions[i].equals("-1") && !prevStack.empty()) {
+        current.push(start); //current 에 시작 페이지를 넣어 줌
+
+        for (int i = 0; i < actions.length; i++) { //actions 배열 순회
+
+            //뒤로 가기 버튼을 누른 경우 "-1" && prevStack 이 비어있지 않은 경우
+            if (actions[i].equals("-1") && !prevStack.isEmpty()) { //문자열이므로 equals() 사용
 
                 //현재 페이지를 nextStack 에 보관(push)
                 nextStack.push(current.pop());
 
                 //prevStack 에서 가장 나중에 보관된 페이지(top)를 현재 페이지로 가져옴
-                String page = prevStack.pop(); //pop() : 가장 최상위(마지막)에 위치한 데이터를 추출하고 스택에서 삭제
-
-                current.push(page);
+                current.push(prevStack.pop());
             }
 
-            //앞으로 가기 버튼을 누른 경우 "1" && nextStack 이 빈 값이 아닐 때
-            else if (actions[i].equals("1") && !nextStack.empty()) {
-                //nextStack 에서 가장 나중에 보관된 페이지(top)를 가져옴
-                String nextPage = nextStack.pop();
-
-                //현재 페이지를 prevStack 에 push
+            //앞으로 가기 버튼을 누른 경우 "1" && nextStack 이 비어있지 않은 경우
+            else if (actions[i].equals("1") && !nextStack.isEmpty()) {
                 prevStack.push(current.pop());
-
-                current.push(nextPage);
+                current.push(nextStack.pop());
             }
 
-            //앞으로 가기, 뒤로 가기 버튼이 비활성화 된 경우 스택에 push 하지 않음
+            //앞으로 가기, 뒤로 가기 버튼이 비활성화 된 경우 아무것도 하지 않아야 함
             else if(actions[i].equals("1") || actions[i].equals("-1")){}
 
             //새로운 페이지로 접속한 경우
@@ -58,15 +53,18 @@ public class Ex03 {
                 //현재 페이지를 prevStack 에 보관
                 prevStack.push(current.pop());
 
+                //next 비우기
                 current.push(actions[i]);
 
                 //nextStack 에 저장된 모든 데이터를 삭제하고 스택 초기화
                 nextStack.clear();
             }
         }
+        //모든 스택을 result 에 저장한 후 반환
         result.add(prevStack);
         result.add(current);
         result.add(nextStack);
+
         return result;
     }
 }

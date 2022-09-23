@@ -10,7 +10,7 @@ public class Ex02 {
     }
 
     public Integer poll() {
-        if(listQueue.size()==0) { //빈 큐
+        if(listQueue.size()==0) { //빈 큐일 때 null 리턴 (=isEmpty)
             return null;
         }else {
             return listQueue.remove(0); //가장 먼저 추가된 데이터 삭제
@@ -22,7 +22,7 @@ public class Ex02 {
     }
 
     public Integer peek() {
-        if(listQueue.size()==0) {
+        if(listQueue.size()==0) { //빈 큐일 때 null 리턴 (=isEmpty)
             return null;
         }else {
             return listQueue.get(0); //가장 먼저 추가된 데이터 리턴
