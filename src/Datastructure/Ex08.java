@@ -3,7 +3,7 @@ package Datastructure;
 import java.util.*;
 
 public class Ex08 {
-    // 트리를 구성하는 노드 클래스입니다.
+    //트리를 구성하는 노드 클래스
     public static class Node {
         private int data;
         private Node left;
@@ -41,7 +41,7 @@ public class Ex08 {
         }
     }
 
-    //이진 탐색 트리의 클래스입니다.
+    //이진 탐색 트리의 클래스
     public static class binarySearchTree {
         public Node root;
 
@@ -49,10 +49,10 @@ public class Ex08 {
             root = null;
         }
 
-        // tree에 value를 추가합니다.
+        //tree에 value를 추가
         public void insert(int data) {
-            Node newNode = new Node(data); // 왼쪽, 오른쪽 자식 노드가 null 이며 data 의 값이 저장된 새 노드 생성
-            if (root == null) {// 루트 노드가 없을때, 즉 트리가 비어있는 상태일 때,
+            Node newNode = new Node(data); //왼쪽, 오른쪽 자식 노드가 null 이며 data 의 값이 저장된 새 노드 생성
+            if (root == null) {//루 노드가 없을때, 즉 트리가 비어있는 상태일 때,
                 root = newNode;
                 return;
             }
@@ -64,7 +64,7 @@ public class Ex08 {
             while (true) {
                 parentNode = currentNode;
 
-                if (data < currentNode.getData()) { // 해당 노드보다 작을 경우
+                if (data < currentNode.getData()) { //해당 노드보다 작을 경우
                     currentNode = currentNode.getLeft();
                     if (currentNode == null) {
                         parentNode.setLeft(newNode);
@@ -80,20 +80,20 @@ public class Ex08 {
             }
         }
 
-        // tree의 value값을 탐색합니다.
+        //tree의 value값을 탐색
         public boolean contains(int data) {
             Node currentNode = root;
             while (currentNode != null) {
-                // 찾는 value값이 노드의 value와 일치한다면, true를 리턴합니다.
+                //찾는 value값이 노드의 value와 일치한다면, true를 리턴
                 if (currentNode.data == data) {
                     return true;
                 }
 
                 if (currentNode.data > data) {
-                    // 찾는 value값이 노드의 value 보다 작다면, 현재 노드를 left로 변경후 다시 반복합니다.
+                    //찾는 value값이 노드의 value 보다 작다면, 현재 노드를 left로 변경 후 다시 반복
                     currentNode = currentNode.left;
                 }else {
-                    // 찾는 value값이 노드의 value 보다 크다면, 현재 노드를 right로 변경후 다시 반복합니다.
+                    //찾는 value값이 노드의 value 보다 크다면, 현재 노드를 right로 변경 후 다시 반복
                     currentNode = currentNode.right;
                 }
             }
@@ -101,12 +101,11 @@ public class Ex08 {
         }
 
   /*
-	트리의 순회에 대해 구현을 합니다.
-  지금 만드려고 하는 이 순회 메서드는 단지 순회만 하는 것이 아닌, 함수를 매개변수로 받아 콜백 함수에 값을 적용시킨 것을 순회해야 합니다.
-  전위 순회를 통해 어떻게 탐색하는지 이해를 한다면 중위와 후위 순회는 쉽게 다가올 것입니다.
+  트리의 순회에 대해 구현
+  지금 만드려고 하는 이 순회 메서드는 단지 순회만 하는 것이 아닌, 함수를 매개변수로 받아 콜백 함수에 값을 적용시킨 것을 순회
 	*/
 
-        // 이진 탐색 트리를 전위 순회하는 메서드를 만듭니다.
+        //이진 탐색 트리를 전위 순회하는 메서드
         public static ArrayList<Integer> preorderTree(Node root, int depth, ArrayList<Integer> list) {    //전위 순회
             if (root != null) {
                 list.add(root.getData());
