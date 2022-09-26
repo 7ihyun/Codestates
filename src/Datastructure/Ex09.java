@@ -24,7 +24,7 @@ public class Ex09 {
 
     // TODO: 간선을 추가합니다.
     public void addEdge(int from, Integer to) {
-        //from, to가 그래프의 크기보다 작거나, 음수일 경우 아무것도 추가하지 않습니다.
+        //from, to가 그래프의 크기보다 크거나, 음수일 경우 아무것도 추가하지 않습니다.
         if(from < 0 || to < 0 || from >= graph.size() || to >= graph.size()) return;
         //from, to가 정확하게 입력되었을 경우
         // - from의 인접 리스트에 to를 추가하고

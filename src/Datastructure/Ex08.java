@@ -52,7 +52,7 @@ public class Ex08 {
         //tree에 value를 추가
         public void insert(int data) {
             Node newNode = new Node(data); //왼쪽, 오른쪽 자식 노드가 null 이며 data 의 값이 저장된 새 노드 생성
-            if (root == null) {//루 노드가 없을때, 즉 트리가 비어있는 상태일 때,
+            if (root == null) {//루 노드가 없을때, 즉 트리가 비어있는 상태일 때
                 root = newNode;
                 return;
             }
