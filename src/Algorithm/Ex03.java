@@ -31,9 +31,16 @@ public class Ex03 {
         int output3 = boardGame(board3, "DDRRRUDUDUD");
         System.out.println(output3); // 0
     }
+    // 이동이 가능한지 확인하고 boolean 으로 결과를 반환한다.
+    public static boolean isValid(int y, int x, int len) {
+        // 최솟값과 최댓값을 벗어나면 false, 가능하면 true를 반환한다.
+        return 0 <= y && y < len && 0 <= x && x < len;
+    }
     public static Integer boardGame(int[][] board, String operation) {
         // TODO:
+        // 배열이나 연결리스트 사용해도 됨
         // HashMap을 선언하고, 입력되는 명령어에 따라 이동할 좌표를 넣는다.
+
         HashMap<String, int[]> DIR = new HashMap<String, int[]>(){{
             put("U", new int[]{-1, 0}); // 상
             put("D", new int[]{1, 0}); // 하
@@ -50,8 +57,8 @@ public class Ex03 {
         char[] chars = operation.toCharArray();
         // 해당 배열만큼 반복한다.
         for (int i = 0; i < chars.length; i++) {
-            int dY = DIR.get(String.valueOf(chars[i]))[0];
             int dX = DIR.get(String.valueOf(chars[i]))[1];
+            int dY = DIR.get(String.valueOf(chars[i]))[0];
 
             x += dX;
             y += dY;
@@ -63,10 +70,6 @@ public class Ex03 {
         }
         // 전체 점수를 반환한다.
         return score;
-        // 이동이 가능한지 확인하고 boolean 으로 결과를 반환한다.
-        public static boolean isValid(int y, int x, int len) {
-            // 최솟값과 최댓값을 벗어나면 false, 가능하면 true를 반환한다.
-            return 0 <= y && y < len && 0 <= x && x < len;
-        }
+
     }
 }

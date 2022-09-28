@@ -1,22 +1,21 @@
 package Algorithm;
 
-import java.util.*;
 
 public class Ex04 {
     public static void main(String[] args) {
-        int output = ocean(50, new int[]{10, 20, 50});
-        System.out.println(output); // 4
+        long output1 = ocean(50, new int[]{10, 20, 50});
+        System.out.println(output1); // 4
 
-        output = ocean(100, new int[]{10, 20, 50});
-        System.out.println(output); // 10
+        long output2 = ocean(100, new int[]{10, 20, 50});
+        System.out.println(output2); // 10
 
-        output = ocean(30, new int[]{5, 6, 7});
-        System.out.println(output); // 4
+        long output3 = ocean(30, new int[]{5, 6, 7});
+        System.out.println(output3); // 4
     }
-    public long ocean(int target, int[] type) {
+    public static long ocean(int target, int[] type) {
         // TODO:
-        // 인덱스는 1부터 시작한다. (최소한의 경우의 수가 1이라고 지정하는 것)
-        long[] bag = new long[target + 1];;
+        // 인덱스는 1부터 시작한다.
+        long[] bag = new long[target + 1];
         // 경우의 수를 저장하기 위해 초기값을 0으로 한다.
         bag[0] = 1;
         // 돈의 종류가 담긴 배열을 순차적으로 탐색한다.
@@ -32,3 +31,4 @@ public class Ex04 {
         return bag[target];
     }
 }
+
