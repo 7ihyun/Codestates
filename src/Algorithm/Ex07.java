@@ -30,7 +30,7 @@ public class Ex07 {
         // 2. 소수 판별하기
     public static boolean isPrime(int number) {
         // 2부터 비교해 소수를 판별한다.
-        // number의 제곱근까지 비교한다. (효율적으로 사용하기 위해)
+        // number의 제곱근까지 비교한다.
         for(int i = 2; i <= Math.sqrt(number); i++) {
             // 나누어 떨어지는 수가 있다면 소수가 아니다.
             if(number % i == 0) return false;
