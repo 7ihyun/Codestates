@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Ex05_2 {
     public static void main(String[] args) {
-        ArrayList<String[]> output = rockPaperScissors(5);
+        ArrayList<String[]> output = rockPaperScissors(3);
 
         System.out.println(output);
     }
@@ -25,9 +25,9 @@ public class Ex05_2 {
             outcomes.add(arr);
             return outcomes;
         }
-        // [rock, paper, scissors]를 요소로 갖는 str 배열을 선언한다.
+        // [rock, paper, scissors]를 요소로 갖는 str 배 열을 선언한다.
         String[] rps = new String[]{"rock", "paper", "scissors"};
-        // str 배열을 한 번씩 순회한다.
+        // rps 배열을 한 번씩 순회한다.
         for (int i = 0; i < rps.length; i++) {
             // rps의 i번째 요소를 변수에 담는다.
             String currentPlay = rps[i];
