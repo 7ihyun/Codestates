@@ -12,7 +12,7 @@ public class Ex08 {
     public static ArrayList<Integer[]> divideChocolateStick(int M, int N) {
         // TODO:
         ArrayList<Integer[]> result = new ArrayList<>();
-        // 최대공약수를 구한다.
+        // 최대공약수 구하기
         int GCD = gcd(M, N);
         // 약수는 대칭적이므로 제곱근까지 반복한다.
         int sqrt = (int) Math.floor(Math.sqrt(GCD));
