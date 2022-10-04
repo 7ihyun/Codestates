@@ -17,13 +17,13 @@ public class Ex08 {
         // 약수는 대칭적이므로 제곱근까지 반복한다.
         int sqrt = (int) Math.floor(Math.sqrt(GCD));
 
-        for (int i = 1; i <= sqrt; i++) {
-            if (GCD % i == 0) {
+        for (int left = 1; left <= sqrt; left++) {
+            if (GCD % left == 0) {
                 // 최대공약수의 약수인 경우 중에 제곱근 보다 작은 약수의 경우
-                result.add(new Integer[]{i, M / i, N / i});
-                if(i * i < GCD) {
+                result.add(new Integer[]{left, M / left, N / left});
+                if(left * left < GCD) {
                     // 제곱근이 아닌 경우(제곱근 보다 작은 경우)
-                    int right = GCD / i;     // 최대 공약수를 제곱근이 아닌 수로 나누면 제곱근 보다 큰 약수를 구할 수 있다.
+                    int right = GCD / left;     // 최대 공약수를 제곱근이 아닌 수로 나누면 제곱근 보다 큰 약수를 구할 수 있다.
                     result.add(new Integer[]{right, M / right, N / right});
                 }
             }
