@@ -28,7 +28,7 @@ public class Ex08 {
                 }
             }
         }
-        // 빼빼로를 받게 되는 직원의 수를 기준으로 오름차순으로 정려한다.
+        // 빼빼로를 받게 되는 직원의 수를 기준으로 오름차순으로 정렬한다.
         Collections.sort(result, new Comparator<Integer[]>() {
             @Override
             public int compare(Integer[] o1, Integer[] o2) {
