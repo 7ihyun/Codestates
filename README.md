@@ -1,2 +1,2 @@
 # Codestates
-Java Practice Code Storage
+코드스테이츠에서 학습하며 작성한 연습 코드입니다.
